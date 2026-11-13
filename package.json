@@ -1,0 +1,39 @@
+{
+  "name": "origins-frontend-portal",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3002",
+    "build": "next build",
+    "start": "next start -p 3002",
+    "lint": "next lint",
+    "mobile:icons": "npx capacitor-assets generate --android",
+    "mobile:live": "node scripts/link-mobile.mjs on",
+    "mobile:unlink": "node scripts/link-mobile.mjs off",
+    "mobile:live:apk": "npm run mobile:live && npm run mobile:apk",
+    "mobile:sync": "node scripts/build-mobile.mjs",
+    "mobile:apk": "node scripts/build-apk.mjs",
+    "mobile:build": "npm run mobile:sync && npm run mobile:apk"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.4.2",
+    "@capacitor/app": "^8.1.1",
+    "@capacitor/cli": "^8.4.2",
+    "@capacitor/core": "^8.4.2",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.3",
+    "framer-motion": "^12.43.0",
+    "next": "14.2.35",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.7.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35",
+    "postcss": "^8",
+    "sharp": "^0.35.3",
+    "tailwindcss": "^3.4.1"
+  }
+}
